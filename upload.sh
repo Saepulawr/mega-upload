@@ -15,5 +15,6 @@ fi
 
 mega-login "${USERNAME}" "${PASSWORD}"
 mega-put -c "$1" "$1"
-mega-export -a -f "/$1" | awk '{print $3}'
+mega-export -a -f "/$1" | awk '{print $3}' >> output-export.log
+
 mega-logout
