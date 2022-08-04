@@ -1,5 +1,5 @@
 name: "Upload file to Mega"
-author: "SiegeWizard"
+author: "Saepulawr"
 description: "Upload file to Mega"
 inputs:
   file:
