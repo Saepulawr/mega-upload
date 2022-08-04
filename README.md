@@ -7,22 +7,19 @@ This GitHub action allows you to upload a file to Mega.
 ```yml
 - name: Upload README.md
   uses: Siege-Wizard/mega-upload@1.0.0
-  with:
-    file: README:md
   env:
     USERNAME: ${{ secrets.MEGA_USERNAME }}
     PASSWORD: ${{ secrets.MEGA_PASSWORD }}
+    UPLOAD-FROM: "path file to upload"
+    UPLOAD-TO: "destination path upload"
 ```
-
-**Required Parameters:**
-
-- `file`: The file that should be uploaded to anonfiles.com.
 
 **Environmetal variables:**
 
 - `USERNAME`: Mega username, should be provided from a secret.
 - `PASSWORD`: Mega password, should be provided from a secret.
-
+- `UPLOAD-FROM`: path file to upload
+- `UPLOAD-TO`: destination path upload
 ### Outputs
 
 - `url`: Url of the uploaded file.
