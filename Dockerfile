@@ -8,7 +8,7 @@ RUN apt-get update \
     ca-certificates \
     && update-ca-certificates \
     && curl  \
-    https://mega.nz/linux/repo/xUbuntu_22.04/amd64/megasync-xUbuntu_22.04_amd64.deb \
+    https://mega.nz/linux/repo/xUbuntu_22.04/amd64/megacmd-xUbuntu_22.04_amd64.deb \
     --output /tmp/megacmd.deb \
     && apt install /tmp/megacmd.deb -y \
     && apt-get clean \
