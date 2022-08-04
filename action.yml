@@ -11,6 +11,8 @@ outputs:
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.file }}
 branding:
   color: "gray-dark"
   icon: "share"
