@@ -12,18 +12,18 @@ if [ -z "${PASSWORD}" ]; then
   echo "Mega password must be provided as PASSWORD environment variable"
   return 1
 fi
-if [ -z "${UPLOAD-FROM}" ]; then
-  echo "Variable UPLOAD-FROM is required!"
+if [ -z "${UPLOADFROM}" ]; then
+  echo "Variable UPLOADFROM is required!"
   return 1
 fi
-if [ -z "${UPLOAD-TO}" ]; then
-  echo "Variable UPLOAD-TO is required!"
+if [ -z "${UPLOADTO}" ]; then
+  echo "Variable UPLOADTO is required!"
   return 1
 fi
 
 mega-login "${USERNAME}" "${PASSWORD}"
-mega-put -c "${UPLOAD-FROM}" "${UPLOAD-TO}"
+mega-put -c "${UPLOADFROM}" "${UPLOADTO}"
 # mega-export -a -f "/$1" | awk '{print "::set-output name=url::"$3}'
-mega-export -a -f "/${UPLOAD-TO}"
-mega-export -a -f "/${UPLOAD-TO}" | awk '{print $4}'
+mega-export -a -f "/${UPLOADTO}"
+mega-export -a -f "/${UPLOADTO}" | awk '{print $4}'
 mega-logout
